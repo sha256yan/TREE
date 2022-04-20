@@ -1,0 +1,24 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/react-components/node_modules
+/react-components/.pnp
+/react-components/.pnp.js
+
+# testing
+/react-components/coverage
+
+# production
+react-components/build
+
+# misc
+/react-components/.DS_Store
+.DS_Store
+/react-components/.env.local
+/react-components/.env.development.local
+/react-components/.env.test.local
+/react-components/.env.production.local
+
+/react-components/npm-debug.log*
+/react-components/yarn-debug.log*
+/react-components/yarn-error.log*
