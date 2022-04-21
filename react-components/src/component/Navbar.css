@@ -1,0 +1,24 @@
+.navigation-menu{
+    display:flex;
+    justify-content: space-between;
+    background: linear-gradient(180deg, #4DC03A 0%, #26878D 100%);
+}
+
+.all-menu-items{
+    display:flex;
+    list-style-type: none;
+}
+.menu-descr{
+    text-decoration: none;
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 14px;
+    color: #FFFFFF;
+    padding:20px;
+}
+.logo{
+    background-image: url("../../public/images/treeicon.png");
+    background-size: auto;
+}
