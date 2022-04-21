@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./CardsItem.css";
 function CardsItem(props) {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);

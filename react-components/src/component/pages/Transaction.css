@@ -1,11 +1,11 @@
 .transaction-statement{
     text-align: center;
-    font-family: 'Abel';
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Source Code Pro', monospace;
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 60px;
     line-height: 25px;
     color: #000000;
-    border:5px solid blue;
 }
 
