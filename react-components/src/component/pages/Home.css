@@ -1,0 +1,39 @@
+.home-container{
+    padding-bottom: 40%;
+    background-image: url("../../../public/images/homebackground.jpg");
+    object-fit: cover;
+}
+.home-title{
+    position: absolute;
+    width: 385px;
+    height: 259px;
+    left: 64px;
+    top: 56px;
+
+    font-family: 'Aksara Bali Galang';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 96px;
+    line-height: 259px;
+    color: #FFFFFF;
+}
+.home-desc{
+    position: absolute;
+    width: 500px;
+    height: 93px;
+    left: 64px;
+    top: 250px;
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 25px;
+    padding-top: 100px;
+    padding-bottom:30px;
+    color: #EDEDED;
+}
+.home-contents{
+}
+.buttons{
+    display:flex;
+}

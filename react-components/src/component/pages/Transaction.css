@@ -1,0 +1,11 @@
+.transaction-statement{
+    text-align: center;
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    color: #000000;
+    border:5px solid blue;
+}
+
