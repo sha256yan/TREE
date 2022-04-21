@@ -6,7 +6,7 @@ import Transaction from "./component/pages/Transaction";
 import About from "./component/pages/About";
 import Profile from "./component/pages/Profile";
 import Navbar from "./component/Navbar";
-import Main from "./component/Main.js"
+import Main from "./component/Main"
 
 
 
@@ -16,6 +16,7 @@ class App extends Component {
     return (
       <Router>
         <Navbar></Navbar>
+        <Main title="Test Main Title" content="Test Main Content"></Main>
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
           <Route exact path="/governance" element={<Governance />}></Route>

@@ -1,13 +1,14 @@
+//import React from "react";
 import "./Main.css"
 
-export default function Main(props) {
-    const url = require(`../../public/images/${props.backgroundImg}`)
+
+function Main(props) {
     return (
-        <div 
-            className="main--comp"
-        >
+        <div className="main--comp">
             <h1 className="main--title" >{props.title}</h1>
             <p className="main--content">{props.content}</p>
         </div>
     )
 }
+
+export default Main;

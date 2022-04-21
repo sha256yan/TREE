@@ -2,13 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
+const TREE_ICON_DIR = "../../images/treeicon.png";
+
 
 
 function Navbar() {
   return (
     <nav className="navigation-menu">
       <Link to="/" className="logo">
-        <img src="../../images/treeicon.png" alt="tree logo"></img>
+        <img src={TREE_ICON_DIR} alt="tree logo"></img>
       </Link>
       <ul className="all-menu-items">
         <li className="menu-item">
