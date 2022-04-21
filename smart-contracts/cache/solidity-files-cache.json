@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/Shayan/Desktop/TREE/smart-contracts/contracts/GovContract.sol": {
-      "lastModificationDate": 1650531863652,
-      "contentHash": "823bebb1cac31523a554563aa810c818",
+      "lastModificationDate": 1650553501153,
+      "contentHash": "9c8853fa4c5d52b94f5662fe364753ca",
       "sourceName": "contracts/GovContract.sol",
       "solcConfig": {
         "version": "0.8.0",
