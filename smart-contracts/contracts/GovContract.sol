@@ -43,8 +43,6 @@ library SafeMath {
 
 /*
     TO DO:
-        - Use SafeMath
-        - Use SafeTransfer
         - Gov tokens must be locked to create an issue.
         - Later refactor to store issue strings off-chain.
 */
@@ -56,21 +54,68 @@ library SafeMath {
         -Governor
             - The core contract that contains all the logic and primitives. It is abstract and requires choosing one of each of the modules below, or custom ones.
 
+
+
         -GovernorSettings
             - Manages some of the settings (voting delay, voting period duration, and proposal threshold)
               in a way that can be updated through a governance proposal, without requiering an upgrade.
 
+
+
         -GovernorCountingSimple
             - Simple voting mechanism with 3 voting options: Against, For and Abstain.
+
+
 
         -GovernorVotes
             - Extracts voting weight from an ERC20Votes token.
 
+
+
         -GovernorVotesQuorumFraction
             - Combines with GovernorVotes to set the quorum as a fraction of the total token supply.
 
+
+
         -GovernorTimelockControl
             - Connects with an instance of TimelockController. Allows multiple proposers and executors, in addition to the Governor itself.
+
+
+
+        Quorum:
+            - Portion of total voting power of a governing community needed to pass a consensus.
+*/
+
+
+
+
+
+
+/*
+    Terminology:
+
+        - Operation
+
+            - A transaction (or multiple transactions) that are the subject of a timelock. Scheduled by a proposer
+              and executed by an executor. Timelock sets a minimum delay between proposition and execution.
+            - If an operation has multiple transactions, (batch mode), they are executed automatically.
+            - Identified by the hash of their content.
+
+        - Operation Status:
+
+            -Unset:    An operation that is not part of the timelock mechanism.
+            -Pending:  An operation that has been scheduled, before the timer expires.
+            -Ready:    An operation that has been scheduled, after the timer expires.
+            -Done:     An operation that has been executed.
+        
+        - Role:
+
+            - Admin:     An address in charge of other roles.
+            - Proposer:  An address in charge of scheduling and cancelling operations.
+            - Executor:  An address in charge of executing operations after timelock expiry.
+
+
+            
 */
 
 
@@ -78,6 +123,19 @@ library SafeMath {
 contract MyGovernor is Governor, GovernorSettings, GovernorCountingSimple, GovernorVotes, GovernorVotesQuorumFraction, GovernorTimelockControl {
 
     using SafeMath for uint;
+
+    //_token is the gov token.
+
+    /*
+        GovernorVotesQuorumFraction:
+            -takes an int arguement which determines minimum percentage of total 
+             gov token supply needed to pass a consensus. (The Quorum)
+        votingDelay:
+            - How long after proposal creation should voting powers be fixed
+        votingPeriod:
+            - How long a proposal remains open to votes. (Number of blocks away from creation)
+    */
+
 
     constructor(IVotes _token, TimelockController _timelock)
         Governor("MyGovernor")
