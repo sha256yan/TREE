@@ -1,6 +1,12 @@
 import React from "react";
 import Newscard from "../Newscard";
+import AllButtons from "../AllButtons";
+import CryptoLogIn from "../Auth";
 import "./Home.css";
+
+
+
+
 function Home() {
   return (
     <span className="home-wrapper">
@@ -24,16 +30,8 @@ function Home() {
               className="newscard-items"
             ></Newscard>
           </ul>
-          <div className="all-buttons">
-            <btn className="button-design2">
-              <i class="fa fa-calendar" aria-hidden="true"></i>
-              <span className="button-desc">Important Dates</span>
-            </btn>
-            <btn className="button-design2">
-              <i class="fas fa-image"></i>
-              <span className="button-desc">More Photos</span>
-            </btn>
-          </div>
+          <CryptoLogIn></CryptoLogIn>
+          <AllButtons></AllButtons>
         </div>
       </section>
     </span>
