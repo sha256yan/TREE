@@ -5,12 +5,11 @@
 }
 .home-title{
     position: absolute;
-    width: 385px;
-    height: 259px;
-    left: 64px;
-    top: 56px;
-    margin-top:20px;
-    font-style: normal;
+    width: 24rem;
+    height: 16.2rem;
+    left: 4rem;
+    top: 3.9rem;
+    margin-top: 1.2rem;
     font-weight: 500;
     font-size: 96px;
     line-height: 259px;
@@ -18,16 +17,11 @@
 }
 .home-desc{
     position: absolute;
-    width: 500px;
-    height: 93px;
-    left: 64px;
-    top: 250px;
-    font-style: normal;
     font-weight: 400;
     font-size: 30px;
     line-height: 25px;
-    padding-top: 100px;
-    padding-bottom:30px;
+    padding-top: 6rem;
+    padding-bottom:2rem;
     color: #EDEDED;
 }
 
@@ -37,7 +31,7 @@
 .newscard-container{
     border-top:1px solid green;
     margin-top:-1px;
-    padding-left: 1200px;
+    padding-left: 75rem;
 }
 .newscard-items{
     display:flex;
@@ -45,95 +39,96 @@
 }
 /*styling of individual newscard*/
 .newscard-title{
-    font-style: normal;
     font-weight: 400;
-    font-size: 40px;
+    font-size: 2.5rem;
     line-height: 92.5%;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.07rem;
     color: #FFFFFF;
-    margin-bottom: -100px;
-    margin-top:8px;
+    margin-bottom: -6.25rem;
+    margin-top:0.5rem;
 }
 .newscard-duration{
-    font-style: normal;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 50px;
+    font-size: 1.2rem;
+    line-height: 3rem;
     color: rgba(255, 255, 255, 0.5);
-    margin-top:100px;
+    margin-top:6.25rem;
     width:75%;
-    margin-left:20px;
+    margin-left:1.2rem;
 }
 .newscard-wrapper{
-    width: 240px;
-    height: 300px;
-    left: 616px;
-    top: 56px;
+    width: 15rem;
+    height: 18.75rem;
+    left: 70vw;
+    top: 3.5rem;
     background: rgba(196, 196, 196, 0.271);
     backdrop-filter: blur(30px);
-    margin-top:160px;
-    margin-bottom:-100px;
+    margin-top:10rem;
+    margin-bottom:-6.25rem;
+    border:5px solid red;
 }
 /*button style*/
 .button-design{
-    width: 150px;
-    height: 43px;
-    left: 64px;
-    top: 370px;
+    width: 9rem;
+    height: 2.5rem;
+    left: 2.75rem;
+    top: 23rem;
     background: #FFFFFF;
-    border-radius: 30px;
+    border-radius: 2rem;
     display:flex;
-    padding-top: 20px;
-    padding-left:20px;
-    margin-left:50px;
+    padding-top: 1.2rem;
+    padding-left:1.2rem;
+    margin-left:3rem;
 }
 .button-desc{
     padding-left:10px;
 }
 .button-design:hover{
-    width: 150px;
-    height: 43px;
-    left: 64px;
-    top: 370px;
+    width: 9.3rem;
+    height: 2.7rem;
+    left: 4rem;
+    top: 23rem;
     background: #FFFFFF;
-    border-radius: 30px;
+    border-radius: 2.8rem;
     display:flex;
-    padding-top: 20px;
-    padding-left:20px;
-    margin-top: 450px;
-    margin-left:50px;
+    padding-top: 1.2rem;
+    padding-left:1.2rem;
+    margin-top: 28rem;
+    margin-left: 3rem;
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(30px); 
+    backdrop-filter: blur(2rem); 
 }
 .all-buttons{
     display:flex;
 }
 
 .button-design2{
-    width: 150px;
-    height: 43px;
-    left: 64px;
-    top: 370px;
+    width: 9.3rem;
+    height: 2.7rem;
+    left: 4rem;
+    top: 23rem;
     background: #FFFFFF;
-    border-radius: 30px;
+    border-radius: 2.8rem;
     display:flex;
-    padding-top: 20px;
-    padding-left:20px;
-    margin-left:50px;
-    margin-top:-220px;
+    padding-top: 1.2rem;
+    padding-left:1.2rem;
+    margin-top: 28rem;
+    margin-left: 3rem;
+    margin-top:-18.75rem;
 }
 .button-design2:hover{
-    width: 150px;
-    height: 43px;
-    left: 64px;
-    top: 370px;
+    width: 9.375rem;
+    height: 2.688rem;
+    left: 4rem;
+    top: 23.125rem;
     background: #FFFFFF;
-    border-radius: 30px;
+    border-radius: 1.875rem;
     display:flex;
-    padding-top: 20px;
-    padding-left:20px;
-    margin-top: 450px;
-    margin-left:50px;
+    padding-top: 1.25rem;
+    padding-left:1.25rem;
+    margin-top: 28.125rem;
+    margin-left:3.125rem;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(30px); 
+    margin-top:-18.75rem;
 }

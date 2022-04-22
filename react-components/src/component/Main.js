@@ -5,21 +5,20 @@ import AllButtons from "./AllButtons";
 // create new section called main--init
 export default function Main(props) {
   const mainTitle = {
-    padding: "40px 10px 0px 40px",
+    padding: "2.5rem 0.625rem 0rem 2.5rem",
 
     fontStyle: "normal",
     fontWeight: "400",
-    fontSize: "96px",
+    fontSize: "6rem",
     color: "white",
-    marginTop: "150px",
+    marginTop: "9.375rem",
   };
   const mainContent = {
-    paddingLeft: "50px",
     fontStyle: "normal",
     fontWeight: "400",
-    fontSize: "20px",
+    fontSize: "1.25rem",
     color: "white",
-    marginBottom: "-400px",
+    marginBottom: "-25rem",
   };
   const mainComp = {
     width: "100%",
@@ -27,11 +26,8 @@ export default function Main(props) {
     backgroundImage: `url(${props.theimage})`,
     objectFit: "none",
     border: "none",
-    marginTop: "-151px",
-    paddingBottom: "30px",
-  };
-  const myButton = {
-    marginTop: "-400px",
+    marginTop: "-9.438rem",
+    paddingBottom: "1.875rem",
   };
 
   return (
@@ -42,7 +38,7 @@ export default function Main(props) {
       <p classname="main--content" style={mainContent}>
         {props.content}
       </p>
-      <AllButtons style={myButton}></AllButtons>
+      <AllButtons></AllButtons>
     </section>
   );
 }

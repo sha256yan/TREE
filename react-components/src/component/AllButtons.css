@@ -1,31 +1,31 @@
 .button-design{
-    width: 150px;
-    height: 43px;
-    left: 64px;
-    top: 370px;
+    width: 9.375rem;
+    height: 2.688rem;
+    left: 4rem;
+    top: 23.125rem;
     background: #FFFFFF;
-    border-radius: 30px;
+    border-radius: 1.875rem;
     display:flex;
-    padding-top: 20px;
-    padding-left:20px;
-    margin-top: 450px;
-    margin-left:50px;
+    padding-top: 1.25rem;
+    padding-left:1.25rem;
+    margin-top: 28.125rem;
+    margin-left:3.125rem;
 }
 .button-desc{
-    padding-left:10px;
+    padding-left:0.625rem;
 }
 .button-design:hover{
-    width: 150px;
-    height: 43px;
-    left: 64px;
-    top: 370px;
+    width: 9.375rem;
+    height: 2.688rem;
+    left: 4rem;
+    top: 23.125rem;
     background: #FFFFFF;
-    border-radius: 30px;
+    border-radius: 1.875rem;
     display:flex;
-    padding-top: 20px;
-    padding-left:20px;
-    margin-top: 450px;
-    margin-left:50px;
+    padding-top: 1.25rem;
+    padding-left:1.25rem;
+    margin-top: 28.125rem;
+    margin-left:3.125rem;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(30px); 
 }
