@@ -16,6 +16,30 @@ import "@openzeppelin/contracts/governance/extensions/GovernorTimelockControl.so
 //use safe transfer libraries.
 //use safemath
 
+//Safe Math Interface
+
+contract SafeMath {
+
+    function safeAdd(uint a, uint b) public pure returns (uint c) {
+        c = a + b;
+        require(c >= a);
+    }
+
+    function safeSub(uint a, uint b) public pure returns (uint c) {
+        require(b <= a);
+        c = a - b;
+    }
+
+    function safeMul(uint a, uint b) public pure returns (uint c) {
+        c = a * b;
+        require(a == 0 || c / a == b);
+    }
+
+    function safeDiv(uint a, uint b) public pure returns (uint c) {
+        require(b > 0);
+        c = a / b;
+    }
+}
 
 /*
     TO DO:
@@ -201,6 +225,3 @@ contract MyGovernor is Governor, GovernorSettings, GovernorCountingSimple, Gover
         return super.supportsInterface(interfaceId);
     }
 }
-
-
-
