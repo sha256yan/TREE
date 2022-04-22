@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-//import React from "react";
-import "./Main.css"
-
-
-function Main(props) {
-    return (
-        <div className="main--comp">
-            <h1 className="main--title" >{props.title}</h1>
-            <p className="main--content">{props.content}</p>
-        </div>
-    )
-}
-
-export default Main;
-=======
 import React from "react";
 import AllButtons from "./AllButtons";
 
@@ -58,4 +42,3 @@ export default function Main(props) {
     </section>
   );
 }
->>>>>>> 81ea3977dfc6b7d215ae7e74cf89d1a7c963a953
