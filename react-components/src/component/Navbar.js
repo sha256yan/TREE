@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import treeicon from "../treeicon.png";
 
 
 
@@ -12,7 +11,12 @@ function Navbar() {
 
 
       <Link to="/" className="logo">
-        <img src={treeicon} alt="tree logo"></img>
+        <img
+          src="images/treeicon.png"
+          height="80px"
+          alt="Trans"
+          className="navigation-icon"
+        ></img>
       </Link>
       <ul className="all-menu-items">
         <li className="menu-item">
