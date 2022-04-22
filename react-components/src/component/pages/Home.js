@@ -2,6 +2,7 @@ import React from "react";
 import Newscard from "../Newscard";
 import AllButtons from "../AllButtons";
 import CryptoLogIn from "../Auth";
+import { EmailLogIn } from "../Auth";
 import "./Home.css";
 
 
@@ -30,8 +31,11 @@ function Home() {
               className="newscard-items"
             ></Newscard>
           </ul>
-          <CryptoLogIn></CryptoLogIn>
-          <AllButtons></AllButtons>
+          <div className="test-buttons">
+            <CryptoLogIn></CryptoLogIn>
+            <EmailLogIn></EmailLogIn>
+            <AllButtons></AllButtons>
+          </div>
         </div>
       </section>
     </span>

@@ -15,9 +15,9 @@ function App(props) {
 
 
   const { login, isAuthenticated, authenticate, Moralis, user } = useMoralis();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [email, setEmail] = React.useState("");
 
 
 

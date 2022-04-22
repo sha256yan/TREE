@@ -2,33 +2,23 @@
     width: 9.375rem;
     height: 2.688rem;
     left: 4rem;
-    top: 23.125rem;
     background: #FFFFFF;
     border-radius: 1.875rem;
-    display:flex;
-    padding-top: 1.25rem;
-    padding-left:1.25rem;
-    margin-top: 28.125rem;
-    margin-left:3.125rem;
+    display: inline-block;
 }
 .button-desc{
     padding-left:0.625rem;
 }
+
+
+
 .button-design:hover{
-    width: 9.375rem;
-    height: 2.688rem;
-    left: 4rem;
-    top: 23.125rem;
-    background: #FFFFFF;
-    border-radius: 1.875rem;
-    display:flex;
-    padding-top: 1.25rem;
-    padding-left:1.25rem;
-    margin-top: 28.125rem;
-    margin-left:3.125rem;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(30px); 
 }
+
+
+
 .all-buttons{
     display:flex;
 }
