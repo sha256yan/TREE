@@ -3,7 +3,7 @@ import Newscard from "../Newscard";
 import AllButtons from "../AllButtons";
 import CryptoLogIn from "../Auth";
 import { EmailLogIn } from "../Auth";
-import Signup from "../Signup";
+import SignUp, {SignIn} from "../Signup";
 import "./Home.css";
 
 
@@ -34,8 +34,8 @@ function Home() {
           </ul>
           <div className="test-buttons">
             <CryptoLogIn></CryptoLogIn>
-            <Signup></Signup>
-            <AllButtons></AllButtons>
+            <SignUp></SignUp>
+            <SignIn></SignIn>
           </div>
         </div>
       </section>

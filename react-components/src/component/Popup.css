@@ -11,8 +11,8 @@
   .box {
     position: relative;
     margin: 0 auto;
-    width: 10%;
-    height: 25%;
+    width: 20%;
+    height: 30%;
     max-height: 70vh;
     margin-top: calc(100vh - 85vh - 20px);
     background: #fff;
