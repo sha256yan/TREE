@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 //to be imported into the Profile page
 // The properties for ProfileInfo are {image, name, description}
 
-function Ranger() {
+function PersonType() {
   return (
     <>
       <ProfileInfo></ProfileInfo>
