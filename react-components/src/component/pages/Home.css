@@ -10,7 +10,6 @@
     left: 64px;
     top: 56px;
     margin-top:20px;
-    font-family: 'Aksara Bali Galang';
     font-style: normal;
     font-weight: 500;
     font-size: 96px;
@@ -23,7 +22,6 @@
     height: 93px;
     left: 64px;
     top: 250px;
-    font-family: 'Abel';
     font-style: normal;
     font-weight: 400;
     font-size: 30px;
@@ -47,7 +45,6 @@
 }
 /*styling of individual newscard*/
 .newscard-title{
-    font-family: 'Abel';
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
@@ -58,7 +55,6 @@
     margin-top:8px;
 }
 .newscard-duration{
-    font-family: 'Abel';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;

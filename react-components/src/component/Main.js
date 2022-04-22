@@ -7,7 +7,6 @@ export default function Main(props) {
   const mainTitle = {
     padding: "40px 10px 0px 40px",
 
-    fontFamily: "Abel",
     fontStyle: "normal",
     fontWeight: "400",
     fontSize: "96px",
@@ -16,7 +15,6 @@ export default function Main(props) {
   };
   const mainContent = {
     paddingLeft: "50px",
-    fontFamily: "Abel",
     fontStyle: "normal",
     fontWeight: "400",
     fontSize: "20px",
