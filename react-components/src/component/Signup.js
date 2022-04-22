@@ -1,6 +1,9 @@
 import React from "react";
 import Popup from "./Popup";
 import "./Signup.css";
+
+
+
 function Signup() {
   const [isOpen, setIsOpen] = React.useState(false);
   const togglePopup = () => {
@@ -18,7 +21,7 @@ function Signup() {
         <Popup
           content={
             <>
-              <h1 className="signup-title">Signup</h1>
+              <h1 className="signup-title">Sign Up</h1>
               <form className="signup-form">
                 <label className="signup-label">
                   <input

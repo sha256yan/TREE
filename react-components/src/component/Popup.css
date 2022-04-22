@@ -10,9 +10,9 @@
    
   .box {
     position: relative;
-    width: 70%;
     margin: 0 auto;
-    height: 30%;
+    width: 10%;
+    height: 25%;
     max-height: 70vh;
     margin-top: calc(100vh - 85vh - 20px);
     background: #fff;
@@ -21,14 +21,20 @@
     border: 1px solid #999;
     overflow: auto;
     box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .close-container {
+    display: flex;
+    justify-content: right;
+    width: 100%;
   }
    
   .close-icon {
     content: 'x';
     cursor: pointer;
-    position: fixed;
-    right: calc(17%);
-    top: calc(100vh - 85vh - 15px);
     background: #ff4444;
     opacity: 90%;
     width: 25px;
