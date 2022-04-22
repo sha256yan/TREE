@@ -14,8 +14,10 @@ export const CryptoAuthContext = React.createContext();
 function App(props) {
 
 
-
-  const { authenticate, isAuthenticated, user } = useMoralis();
+  const { login, isAuthenticated, authenticate, Moralis, user } = useMoralis();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
 
 
 
