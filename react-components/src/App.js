@@ -6,7 +6,6 @@ import Transaction from "./component/pages/Transaction";
 import About from "./component/pages/About";
 import Profile from "./component/pages/Profile";
 import Navbar from "./component/Navbar";
-import Main from "./component/Main";
 
 class App extends Component {
   render() {

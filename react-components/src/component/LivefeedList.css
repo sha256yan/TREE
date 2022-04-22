@@ -1,0 +1,10 @@
+.livefeed-container{
+    width: 18.75rem;
+    height: 40%;
+    left: 70vw;
+    top: 3.5rem;
+    background: rgba(196, 196, 196, 0.271);
+    backdrop-filter: blur(30px);
+    margin-top:10rem;
+    margin-bottom:-6.25rem;
+}

@@ -1,0 +1,30 @@
+.profile-info-wrapper{
+    display:flex;
+    flex-direction: row-reverse;
+    list-style-type: none;  
+}
+.profile-desc{
+    width:45%;
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Source Code Pro', monospace;
+
+}
+.profile-image{
+    margin-left:-600px;
+    padding-right:-10px;
+    width: 320px;
+    height: 350px;
+    left: 45px;
+    top: 485px;
+    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+  -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+  filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    background: #FFFFFF;
+    border-radius: 22px;
+    margin-top:50px;
+
+}
+.profile-name{
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Source Code Pro', monospace;
+}
