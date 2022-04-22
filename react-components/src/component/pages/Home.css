@@ -126,3 +126,18 @@
     margin-left:50px;
     margin-top:-220px;
 }
+.button-design2:hover{
+    width: 150px;
+    height: 43px;
+    left: 64px;
+    top: 370px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    display:flex;
+    padding-top: 20px;
+    padding-left:20px;
+    margin-top: 450px;
+    margin-left:50px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px); 
+}
