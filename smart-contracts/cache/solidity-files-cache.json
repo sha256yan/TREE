@@ -2,11 +2,11 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/Shayan/Desktop/TREE/smart-contracts/contracts/GovContract.sol": {
-      "lastModificationDate": 1650553501153,
-      "contentHash": "9c8853fa4c5d52b94f5662fe364753ca",
+      "lastModificationDate": 1650587196367,
+      "contentHash": "adf3fcb1c89da1ccc1c73b67c45e28ae",
       "sourceName": "contracts/GovContract.sol",
       "solcConfig": {
-        "version": "0.8.0",
+        "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -29,10 +29,16 @@
         }
       },
       "imports": [
-        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/governance/Governor.sol",
+        "@openzeppelin/contracts/governance/extensions/GovernorSettings.sol",
+        "@openzeppelin/contracts/governance/extensions/GovernorCountingSimple.sol",
+        "@openzeppelin/contracts/governance/extensions/GovernorVotes.sol",
+        "@openzeppelin/contracts/governance/extensions/GovernorVotesQuorumFraction.sol",
+        "@openzeppelin/contracts/governance/extensions/GovernorTimelockControl.sol"
       ],
       "versionPragmas": [
-        "=0.8.0"
+        "^0.8.4"
       ],
       "artifacts": [
         "Governance"
@@ -43,7 +49,7 @@
       "contentHash": "bab063ddd80e9cc9e313361fef7ef07f",
       "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
       "solcConfig": {
-        "version": "0.8.0",
+        "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -82,7 +88,7 @@
       "contentHash": "a44d1a099633876550ad2476b21bafbe",
       "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
       "solcConfig": {
-        "version": "0.8.0",
+        "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -117,7 +123,7 @@
       "contentHash": "909ab67fc5c25033fe6cd364f8c056f9",
       "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
       "solcConfig": {
-        "version": "0.8.0",
+        "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -154,7 +160,7 @@
       "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
       "sourceName": "@openzeppelin/contracts/utils/Context.sol",
       "solcConfig": {
-        "version": "0.8.0",
+        "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -256,6 +262,745 @@
       ],
       "artifacts": [
         "TGV_Token"
+      ]
+    },
+    "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/access/AccessControl.sol": {
+      "lastModificationDate": 1650520619981,
+      "contentHash": "76cae8e1eb9c27e818b0b08e1527f731",
+      "sourceName": "@openzeppelin/contracts/access/AccessControl.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IAccessControl.sol",
+        "../utils/Context.sol",
+        "../utils/Strings.sol",
+        "../utils/introspection/ERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AccessControl"
+      ]
+    },
+    "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/access/IAccessControl.sol": {
+      "lastModificationDate": 1650520619994,
+      "contentHash": "57c84298234411cea19c7c284d86be8b",
+      "sourceName": "@openzeppelin/contracts/access/IAccessControl.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IAccessControl"
+      ]
+    },
+    "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
+      "lastModificationDate": 1650520620004,
+      "contentHash": "9c54c6c065d9e590fdcdd72c451425b9",
+      "sourceName": "@openzeppelin/contracts/utils/Strings.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Strings"
+      ]
+    },
+    "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+      "lastModificationDate": 1650520619987,
+      "contentHash": "0e7db055ce108f9da7bb6686a00287c0",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC165"
+      ]
+    },
+    "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1650520619996,
+      "contentHash": "03e6768535ac4da0e9756f1d8a4a018a",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/governance/IGovernor.sol": {
+      "lastModificationDate": 1650520620000,
+      "contentHash": "1a5be50c2b8436df5ec78772626c13e9",
+      "sourceName": "@openzeppelin/contracts/governance/IGovernor.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/introspection/ERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IGovernor"
+      ]
+    },
+    "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/governance/extensions/IGovernorTimelock.sol": {
+      "lastModificationDate": 1650520620000,
+      "contentHash": "eebb17e144c4fd58549d815db19552da",
+      "sourceName": "@openzeppelin/contracts/governance/extensions/IGovernorTimelock.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IGovernor.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IGovernorTimelock"
+      ]
+    },
+    "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/governance/extensions/GovernorTimelockControl.sol": {
+      "lastModificationDate": 1650520619993,
+      "contentHash": "cb4dc50e128ed332c48a1c7d06b4e879",
+      "sourceName": "@openzeppelin/contracts/governance/extensions/GovernorTimelockControl.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IGovernorTimelock.sol",
+        "../Governor.sol",
+        "../TimelockController.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "GovernorTimelockControl"
+      ]
+    },
+    "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/governance/Governor.sol": {
+      "lastModificationDate": 1650520619992,
+      "contentHash": "28514954183285e570ab4889d2dbfe54",
+      "sourceName": "@openzeppelin/contracts/governance/Governor.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/cryptography/ECDSA.sol",
+        "../utils/cryptography/draft-EIP712.sol",
+        "../utils/introspection/ERC165.sol",
+        "../utils/math/SafeCast.sol",
+        "../utils/Address.sol",
+        "../utils/Context.sol",
+        "../utils/Timers.sol",
+        "./IGovernor.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Governor"
+      ]
+    },
+    "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/governance/TimelockController.sol": {
+      "lastModificationDate": 1650520620004,
+      "contentHash": "59f5eb55cde7d6d3ae62c45480aff256",
+      "sourceName": "@openzeppelin/contracts/governance/TimelockController.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../access/AccessControl.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "TimelockController"
+      ]
+    },
+    "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/utils/cryptography/ECDSA.sol": {
+      "lastModificationDate": 1650520619985,
+      "contentHash": "482bcc512029ecf51ca4ae85cf4667c7",
+      "sourceName": "@openzeppelin/contracts/utils/cryptography/ECDSA.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Strings.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ECDSA"
+      ]
+    },
+    "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/utils/cryptography/draft-EIP712.sol": {
+      "lastModificationDate": 1650520619984,
+      "contentHash": "161aae4dc1450371d0f324488f66a9cf",
+      "sourceName": "@openzeppelin/contracts/utils/cryptography/draft-EIP712.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ECDSA.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "EIP712"
+      ]
+    },
+    "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/utils/math/SafeCast.sol": {
+      "lastModificationDate": 1650520620002,
+      "contentHash": "cd91252bfcbee6eaba8f5144f504583c",
+      "sourceName": "@openzeppelin/contracts/utils/math/SafeCast.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SafeCast"
+      ]
+    },
+    "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1650520619982,
+      "contentHash": "ad714a6368ee7d43cded6bbe8af0b155",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.1"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/utils/Timers.sol": {
+      "lastModificationDate": 1650520620005,
+      "contentHash": "ae135102abee8b2fc88eed09a40cdb4c",
+      "sourceName": "@openzeppelin/contracts/utils/Timers.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Timers"
+      ]
+    },
+    "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/governance/extensions/GovernorVotes.sol": {
+      "lastModificationDate": 1650520619993,
+      "contentHash": "232d8cac97c441c8c177aaeeccc94481",
+      "sourceName": "@openzeppelin/contracts/governance/extensions/GovernorVotes.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Governor.sol",
+        "../utils/IVotes.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "GovernorVotes"
+      ]
+    },
+    "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/governance/utils/IVotes.sol": {
+      "lastModificationDate": 1650520620000,
+      "contentHash": "a036d40989f21d08bb990e68d0088fa1",
+      "sourceName": "@openzeppelin/contracts/governance/utils/IVotes.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IVotes"
+      ]
+    },
+    "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/governance/extensions/GovernorVotesQuorumFraction.sol": {
+      "lastModificationDate": 1650520619993,
+      "contentHash": "b346cb21204465106e3d5ea7b6264ee9",
+      "sourceName": "@openzeppelin/contracts/governance/extensions/GovernorVotesQuorumFraction.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./GovernorVotes.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "GovernorVotesQuorumFraction"
+      ]
+    },
+    "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/governance/extensions/GovernorSettings.sol": {
+      "lastModificationDate": 1650520619993,
+      "contentHash": "2c6e87fa9b63c7ef8579eb4ae937d4c2",
+      "sourceName": "@openzeppelin/contracts/governance/extensions/GovernorSettings.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Governor.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "GovernorSettings"
+      ]
+    },
+    "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/governance/extensions/GovernorCountingSimple.sol": {
+      "lastModificationDate": 1650520619992,
+      "contentHash": "ea8f93bb65eeed458767a28c233ed3ac",
+      "sourceName": "@openzeppelin/contracts/governance/extensions/GovernorCountingSimple.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Governor.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "GovernorCountingSimple"
       ]
     }
   }
