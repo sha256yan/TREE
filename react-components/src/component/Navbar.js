@@ -1,9 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+
+
+
+
 function Navbar() {
   return (
     <nav className="navigation-menu">
+
+
       <Link to="/" className="logo">
         <img
           src="images/treeicon.png"

@@ -1,0 +1,31 @@
+.main--comp {
+  width: "100%";
+  height: "100%";
+  display: flex;
+  flex-direction: row;
+  background-image: url("../../public/images/homebackground.jpg");
+}
+
+.white--text {
+  color: white;
+}
+
+.main--title {
+  padding: 0px 10px 0px 40px;
+
+  font-family: 'Abel';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 96px;
+  color: white;
+}
+
+.main--content {
+  padding: 0px 10px 20px 40px;
+
+  font-family: 'Abel';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: white;
+}
