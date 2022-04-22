@@ -1,0 +1,36 @@
+.login-form{
+    display:flex;
+    flex-direction: column;
+    padding-left:40%;
+    margin-top:-1.25rem;
+}
+.login-title{
+    padding-left:45%;
+}
+
+.login-label{
+    margin-bottom:10px;
+    padding-right:10px;
+}
+.login-buttons{
+    display:flex;
+    flex-direction: row;
+}
+.login-button{
+    width: 90px;
+    height: 25px;
+    left: 4rem;
+    top: 23.125rem;
+    background: #FFFFFF;
+    border-radius: 1.875rem;
+    display:flex;
+    padding-left:20px;  
+}
+.login-input{
+    border-radius: 1.875rem;
+}
+
+.login-button{
+    font-weight: bold;
+}
+

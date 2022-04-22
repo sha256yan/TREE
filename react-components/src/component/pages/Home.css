@@ -1,3 +1,4 @@
+
 .home-container{
     padding-bottom: 40%;
     background-image: url("../../../public/images/homebackground.jpg");
@@ -69,6 +70,40 @@
     backdrop-filter: blur(30px);
     margin-top:10rem;
     margin-bottom:-6.25rem;
+}
+/*button style*/
+.button-design{
+    width: 9rem;
+    height: 2.5rem;
+    left: 2.75rem;
+    top: 23rem;
+    background: #FFFFFF;
+    border-radius: 2rem;
+    display:flex;
+    padding-top: 1.2rem;
+    padding-left:1.2rem;
+    margin-left:3rem;
+}
+.button-desc{
+    padding-left:10px;
+}
+.button-design:hover{
+    width: 9.3rem;
+    height: 2.7rem;
+    left: 4rem;
+    top: 23rem;
+    background: #FFFFFF;
+    border-radius: 2.8rem;
+    display:flex;
+    padding-top: 1.2rem;
+    padding-left:1.2rem;
+    margin-top: 28rem;
+    margin-left: 3rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2rem); 
+}
+.all-buttons{
+    display:flex;
 }
 
 .button-design2{

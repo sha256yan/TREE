@@ -25,5 +25,4 @@ react-components/build
 /react-components/yarn-debug.log*
 /react-components/yarn-error.log*
 node_modules
-
 .env
