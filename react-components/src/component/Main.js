@@ -7,6 +7,7 @@ export default function Main(props) {
   const mainTitle = {
     padding: "2.5rem 0.625rem 0rem 2.5rem",
 
+    fontFamily: "Abel",
     fontStyle: "normal",
     fontWeight: "400",
     fontSize: "6rem",
@@ -14,6 +15,8 @@ export default function Main(props) {
     marginTop: "9.375rem",
   };
   const mainContent = {
+    paddingLeft: "3.125rem",
+    fontFamily: "Abel",
     fontStyle: "normal",
     fontWeight: "400",
     fontSize: "1.25rem",
