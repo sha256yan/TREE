@@ -19,17 +19,7 @@ async function main() {
   //tokenContracts schema: tokenTicker_Token : contractObj
   const tokenContracts = await deployTokens(initAmount, initAmount);
 
-  /*
-  const balance1 = await tokenContracts.CRB_Token.balanceOf(signer.address);
-  const balance2 = await tokenContracts.TGV_Token.balanceOf(signer.address);
-  await balance1; await balance2;
-  console.log(balance1, balance2); 
-
-
   const govContract = await deployGovernance(tokenContracts);
-  const CRB = await govContract.Governance.CRB();
-  console.log(CRB);
-  */
 
 
 
