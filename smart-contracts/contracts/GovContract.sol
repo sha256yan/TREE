@@ -18,7 +18,7 @@ import "@openzeppelin/contracts/governance/extensions/GovernorTimelockControl.so
 
 //Safe Math Interface
 
-contract SafeMath {
+library SafeMath {
 
     function safeAdd(uint a, uint b) public pure returns (uint c) {
         c = a + b;
@@ -76,6 +76,9 @@ contract SafeMath {
 
 
 contract MyGovernor is Governor, GovernorSettings, GovernorCountingSimple, GovernorVotes, GovernorVotesQuorumFraction, GovernorTimelockControl {
+
+    using SafeMath for uint;
+
     constructor(IVotes _token, TimelockController _timelock)
         Governor("MyGovernor")
         GovernorSettings(1 /* 1 block */, 45818 /* 1 week */, 0)

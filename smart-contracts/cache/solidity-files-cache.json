@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/Shayan/Desktop/TREE/smart-contracts/contracts/GovContract.sol": {
-      "lastModificationDate": 1650589494006,
-      "contentHash": "1a1d957d339642b06928142076f2dfab",
+      "lastModificationDate": 1650589941650,
+      "contentHash": "76405bc72057d02519a18ab95e37bb22",
       "sourceName": "contracts/GovContract.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -42,7 +42,8 @@
         "^0.8.4"
       ],
       "artifacts": [
-        "MyGovernor"
+        "MyGovernor",
+        "SafeMath"
       ]
     },
     "/Users/Shayan/Desktop/TREE/smart-contracts/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
