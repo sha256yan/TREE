@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CryptoAuthContext, EmailAuthContext } from "../App";
+import Button from "./Button" 
 import Popup from "./Popup";
 import "./Signup.css";
 import validator from "validator";
-import { EmailAuthContext } from "../App";
 
 
+
+function CryptoLogIn(props) {
+    const CryptoAuth = useContext(CryptoAuthContext);
+    return (
+        <Input type="button" value="Sign In" onClick={() => CryptoAuth.authenticate()} inputClass="signup-button">BRUH</Input>
+    );
+}
 
 
 
@@ -79,8 +87,20 @@ function SignIn() {
 
   
 
+//AuthContextSetters: array of setter functions
+//submitFunc: function to be executed when form is submitted. (cannot take params)
+function getEmailFormHandlers(EmailAuth, submitFunc) {
+    const {setEmail, setPassword, setUsername, popupStatus} = EmailAuth;
+    const handleEmailChange = (event) => setEmail(event.target.value);
+    const handlePasswordChange = (event) => setPassword(event.target.value);
+    const handleUsernameChange = (event) => setUsername(event.target.value);
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        submitFunc()
+    };
 
-
+    return {handleEmailChange, handlePasswordChange, handleUsernameChange, handleSubmit, popupStatus};
+}
 
 
 
@@ -94,17 +114,8 @@ function SignUp() {
     setIsOpen(!isOpen);
   };
 
-  const {setEmail, setPassword, setUsername, signupFunc, popupStatus} = EmailAuth;
-
-
-  //These allow the signup component to change the state of the app component. 
-  const handleEmailChange = (event) => setEmail(event.target.value);
-  const handlePasswordChange = (event) => setPassword(event.target.value);
-  const handleUsernameChange = (event) => setUsername(event.target.value);
-  const handleSubmit = (event) => {
-      event.preventDefault();
-      signupFunc()
-  };
+  const submitFunc = EmailAuth.signupFunc;
+  const {handleEmailChange, handlePasswordChange, handleUsernameChange, handleSubmit, popupStatus} = getEmailFormHandlers(EmailAuth, submitFunc);
 
   let title = popupStatus.length > 0 ? popupStatus : "Sign Up";
 
@@ -135,4 +146,4 @@ function SignUp() {
 
 
 export default SignUp;
-export {SignIn, Input};
+export {SignIn, Input, CryptoLogIn};

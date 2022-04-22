@@ -1,15 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CryptoLogIn from "./Auth";
 import "./Navbar.css";
 
+function NavMenuItem(props) {
+  return (
+    <li className="menu-item">
+    <Link to={props.link} className="menu-descr">
+      {props.text}
+    </Link>
+    </li>
+  );
+}
 
 
 
-function Navbar() {
+
+function Navbar(props) {
   return (
     <nav className="navigation-menu">
-
-
       <Link to="/" className="logo">
         <img
           src="images/treeicon.png"
@@ -18,28 +27,19 @@ function Navbar() {
           className="navigation-icon"
         ></img>
       </Link>
+
+
+
+
       <ul className="all-menu-items">
-        <li className="menu-item">
-          <Link to="/governance" className="menu-descr">
-            Governance
-          </Link>
-        </li>
-        <li className="menu-item">
-          <Link to="/transaction" className="menu-descr">
-            Transaction
-          </Link>
-        </li>
-        <li className="menu-item">
-          <Link to="/about" className="menu-descr">
-            About Us
-          </Link>
-        </li>
-        <li className="menu-item">
-          <Link to="/profile" className="menu-descr">
-            Profile
-          </Link>
-        </li>
+        <NavMenuItem text="Governance" link="/governance"></NavMenuItem>
+        <NavMenuItem text="Transaction"link="/transaction"></NavMenuItem>
+        <NavMenuItem text="About Us"   link="/about"></NavMenuItem>
+        <NavMenuItem text="Profile"    link="/profile"></NavMenuItem>
       </ul>
+
+
+
     </nav>
   );
 }
