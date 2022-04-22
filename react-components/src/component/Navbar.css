@@ -2,7 +2,7 @@
     display:flex;
     justify-content: space-between;
     background: linear-gradient(180deg, #4DC03A 0%, #26878D 100%);
-    margin-bottom:-546px;
+
 }
 
 .all-menu-items{
@@ -15,10 +15,10 @@
     font-family: 'Abel';
     font-style: normal;
     font-weight: 400;
-    font-size: 25px;
-    line-height: 14px;
+    font-size: 1.563rem;
+    line-height: 0.875rem;
     color: #FFFFFF;
-    padding:20px;
+    padding:1.25rem;
 
 }
 .logo{
@@ -27,15 +27,15 @@
     font-family: 'Abel';
     font-style: normal;
     font-weight: 400;
-    font-size: 25px;
-    line-height: 14px;
+    font-size: 1.563rem;
+    line-height: 0.875rem;
     color: #FFFFFF;
-    padding:15px;
+    padding:0.938rem;
    
 }
 .navigation-icon{
-    margin-top:-20px;
-    padding-top:-50px;
-    margin-bottom: -10px;;
+    margin-top:-1.25rem;
+    padding-top:-3.125rem;
+    margin-bottom: -0.625rem;
     background-size: auto;
 }
