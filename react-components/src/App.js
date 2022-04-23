@@ -1,19 +1,24 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./component/pages/Home";
-import Governance from "./component/pages/Governance";
-import Transaction from "./component/pages/Transaction";
-import About from "./component/pages/About";
-import Profile from "./component/pages/Profile";
+import { useMoralis } from "react-moralis";
+
 import Navbar from "./component/Navbar";
 import Pages from "./component/Pages";
-import Column from "./component/Column";
-import Main from "./component/Main";
-import CryptoLogIn from "./component/Auth";
-import { useMoralis } from "react-moralis";
+import pageContent from "./PageContent";
+
+
+const WAIT_MSG = "Please wait...";
+const SUCC_SIGNUP_MSG = "Succesfully Signed up!";
+const SUCC_EMAIL_SIGNIN_MSG = "Sucessfully signed in!";
+const SUCC_CRYPT_SIGNIN_MSG = "Successfully connnected wallet!";
+const FAIL_LOGIN_MSG = "Invalid Credentials."
+
+
 
 const CryptoAuthContext = React.createContext();
 const EmailAuthContext = React.createContext();
+
+
 
 export { CryptoAuthContext, EmailAuthContext };
 
@@ -23,17 +28,25 @@ function App(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [popupStatus, setPopupStatus] = useState("");
 
+  //These will be used to store the state of popups.
+  //Will use popups for authentications, proposal 
+  //creation, warnings, etc...
+  const [popupStatus, setPopupStatus] = useState("");
   const POPUP_RESET_DELAY_MS = 3000;
 
-  const resetPopup = () => {
-    setTimeout(() => setPopupStatus(""), POPUP_RESET_DELAY_MS);
+  const resetPopup = (resetDelay) => {
+    setTimeout(() => setPopupStatus(""), resetDelay);
   };
 
+  const setPopupWrapper = (PopupStatus, timeToReset) => {
+    setPopupStatus(PopupStatus);
+    resetPopup(timeToReset);
+  }
+
+
   const signupFunc = async () => {
-    setPopupStatus("Please wait...");
-    console.log(username, password, email);
+    setPopupStatus(WAIT_MSG, POPUP_RESET_DELAY_MS);
 
     const user = new Moralis.User();
     user.set("username", username);
@@ -42,11 +55,9 @@ function App(props) {
 
     try {
       await user.signUp();
-      setPopupStatus("Succesfully Signed up");
-      resetPopup();
+      setPopupWrapper(SUCC_SIGNUP_MSG, POPUP_RESET_DELAY_MS)
     } catch (error) {
-      setPopupStatus(`Sign up failed: ${error.message}`);
-      resetPopup();
+      setPopupWrapper(error.message, POPUP_RESET_DELAY_MS);
     }
   };
 
@@ -59,11 +70,9 @@ function App(props) {
     const result = await login(username, password);
 
     if (result === undefined) {
-      setPopupStatus("Invalid Credentials.");
-      resetPopup();
+      setPopupWrapper(FAIL_LOGIN_MSG, POPUP_RESET_DELAY_MS)
     } else {
-      setPopupStatus("Logged in!");
-      resetPopup();
+      setPopupWrapper(SUCC_EMAIL_SIGNIN_MSG, POPUP_RESET_DELAY_MS);
     }
   };
 
@@ -104,32 +113,11 @@ function App(props) {
         >
           <Navbar></Navbar>
           <Routes>
-            <Route exact path="/" element={<Home />}></Route>
-            <Route exact path="/governance" element={<Governance />}></Route>
-            <Route exact path="/transaction" element={<Transaction />}></Route>
-            <Route
-              exact
-              path="/about"
-              element={
-                <Pages
-                  columns={
-                    <>
-                      <Column
-                        content={
-                          <Main
-                            title="ABOUT US"
-                            content="Established since 2021, we have hosted forest carbon token and governance token sales for thousands of organisations. The aim of Tree organisation is to provide a platform for everyday consumers to help in reducing carbon waste as well."
-                            theimage="images/forestThree.jpg"
-                          ></Main>
-                        }
-                      ></Column>
-                      <Column content={<h1>Hello world!</h1>}></Column>
-                    </>
-                  }
-                ></Pages>
-              }
-            ></Route>
-            <Route exact path="/profile" element={<Profile />}></Route>
+            <Route exact path="/" element={<Pages columns={pageContent.home} />}></Route>
+            <Route exact path="/governance" element={<Pages columns={pageContent.governance} />}></Route>
+            <Route exact path="/transaction" element={<Pages columns={pageContent.transaction}/>}></Route>
+            <Route exact path="/about" element={<Pages columns={pageContent.about}/>}></Route>
+            <Route exact path="/profile" element={<Pages columns={pageContent.profile} />}></Route>
           </Routes>
         </EmailAuthContext.Provider>
       </CryptoAuthContext.Provider>

@@ -35,6 +35,27 @@ function Input(props) {
   );
 }
 
+//AuthContextSetters: array of setter functions
+//submitFunc: function to be executed when form is submitted. (cannot take params)
+function getEmailFormHandlers(EmailAuth, submitFunc) {
+  const { setEmail, setPassword, setUsername, popupStatus } = EmailAuth;
+  const handleEmailChange = (event) => setEmail(event.target.value);
+  const handlePasswordChange = (event) => setPassword(event.target.value);
+  const handleUsernameChange = (event) => setUsername(event.target.value);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    submitFunc();
+  };
+
+  return {
+    handleEmailChange,
+    handlePasswordChange,
+    handleUsernameChange,
+    handleSubmit,
+    popupStatus,
+  };
+}
+
 function SignIn() {
   const EmailAuth = React.useContext(EmailAuthContext);
 
@@ -43,6 +64,14 @@ function SignIn() {
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
+
+  const submitFunc = EmailAuth.loginUsingUsername;
+  const {
+    handlePasswordChange,
+    handleUsernameChange,
+    handleSubmit,
+    popupStatus,
+  } = getEmailFormHandlers(EmailAuth, submitFunc);
 
   const { setPassword, setUsername, loginUsingUsername, popupStatus } =
     EmailAuth;
@@ -102,27 +131,6 @@ function SignIn() {
       )}
     </>
   );
-}
-
-//AuthContextSetters: array of setter functions
-//submitFunc: function to be executed when form is submitted. (cannot take params)
-function getEmailFormHandlers(EmailAuth, submitFunc) {
-  const { setEmail, setPassword, setUsername, popupStatus } = EmailAuth;
-  const handleEmailChange = (event) => setEmail(event.target.value);
-  const handlePasswordChange = (event) => setPassword(event.target.value);
-  const handleUsernameChange = (event) => setUsername(event.target.value);
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    submitFunc();
-  };
-
-  return {
-    handleEmailChange,
-    handlePasswordChange,
-    handleUsernameChange,
-    handleSubmit,
-    popupStatus,
-  };
 }
 
 function SignUp() {
