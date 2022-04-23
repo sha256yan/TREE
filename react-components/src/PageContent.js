@@ -12,7 +12,7 @@ import CryptoLogIn from "./component/Auth";
 import { EmailLogIn } from "./component/Auth";
 import SignUp, {SignIn} from "./component/Signup";
 import "./style.css"
->>>>>>> 0382b9d1e08e787303ddb57c0caab19ed10a527f
+
 
 
 
