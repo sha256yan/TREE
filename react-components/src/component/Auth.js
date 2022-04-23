@@ -1,16 +1,44 @@
 import React, { useContext } from "react";
 import { CryptoAuthContext, EmailAuthContext } from "../App";
-import Button from "./Button" 
 import Popup from "./Popup";
-import "./Signup.css";
-import validator from "validator";
+import "./Auth.css";
 
 
 
-function CryptoLogIn(props) {
+function CryptoLogIn() {
     const CryptoAuth = useContext(CryptoAuthContext);
+
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      CryptoAuth.authenticate()
+    };
+
+    const popupStatus = CryptoAuth.popupStatus;
+    let title = popupStatus.length > 0 ? popupStatus : "MetaMask";
+
+    const [isOpen, setIsOpen] = React.useState(false);
+    const togglePopup = () => {
+      setIsOpen(!isOpen);
+    };
+
     return (
-        <Input type="button" value="Sign In" onClick={() => CryptoAuth.authenticate()} inputClass="signup-button">BRUH</Input>
+      <>
+        <Input type="button" value="Sync Meta" onClick={togglePopup} inputClass="signup-button"></Input>
+        {isOpen && (
+          <Popup
+            content={
+              <>
+                <h1 className="signup-title">{title}</h1>
+                <form className="signup-form"
+                  onSubmit={handleSubmit}>
+                <Input labelClass="signup-label" inputClass="signup-button" type="submit" value="Sync"></Input>
+                </form>
+              </>
+            }
+            handleClose={togglePopup}
+          />
+        )}
+      </>
     );
 }
 
@@ -144,5 +172,4 @@ function SignUp() {
 }
 
 
-export default SignUp;
-export {SignIn, Input, CryptoLogIn};
+export {SignIn, Input, CryptoLogIn, SignUp};

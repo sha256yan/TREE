@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CryptoLogIn from "./Auth";
+import {SignUp, SignIn, CryptoLogIn} from "./Auth";
 import "./Navbar.css";
 
 function NavMenuItem(props) {
@@ -29,7 +29,11 @@ function Navbar(props) {
       </Link>
 
 
-
+      <section className="login-signup-wrapper">
+                    <CryptoLogIn></CryptoLogIn>
+                    <SignUp></SignUp>
+                    <SignIn></SignIn>
+      </section>
 
       <ul className="all-menu-items">
         <NavMenuItem text="Governance" link="/governance"></NavMenuItem>

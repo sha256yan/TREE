@@ -5,12 +5,9 @@ import CardsItem from "./component/CardsItem";
 import Organisations from "./component/Organisations";
 import ProfileInfo from "./component/ProfileInfo";
 import Login from "./component/Login";
-import Signup from "./component/Signup";
 import Newscard from "./component/Newscard";
 import AllButtons from "./component/AllButtons";
-import CryptoLogIn from "./component/Auth";
-import { EmailLogIn } from "./component/Auth";
-import SignUp, {SignIn} from "./component/Signup";
+import {SignUp, CryptoLogIn, SignIn, SignOut } from "./component/Auth";
 import "./style.css"
 
 
@@ -46,29 +43,24 @@ const pageContent = {
                     <span className="home-wrapper">
                     <section className="home-container">
                         <div className="home-contents">
-                        <h1 className="home-title">TREE</h1>
-                        <p className="home-desc">
-                            A platform created to reduce carbon emission via decentralized
-                            autonomous forest preservation. Buy your token today and help save
-                            the Earth!
-                        </p>
-                        <ul className="newscard-container">
-                            <Newscard
-                            event="DeepOwl Woods tokens now available!"
-                            duration="24th April 2022-31st May 2022"
-                            className="newscard-items"
-                            ></Newscard>
-                            <Newscard
-                            event="Governance voting starting soon!"
-                            duration="26th April 2022-28th April 2022"
-                            className="newscard-items"
-                            ></Newscard>
-                        </ul>
-                        <div className="test-buttons">
-                            <CryptoLogIn></CryptoLogIn>
-                            <SignUp></SignUp>
-                            <SignIn></SignIn>
-                        </div>
+                            <h1 className="home-title">TREE</h1>
+                            <p className="home-desc">
+                                A platform created to reduce carbon emission via decentralized
+                                autonomous forest preservation. Buy your token today and help save
+                                the Earth!
+                            </p>
+                            <ul className="newscard-container">
+                                <Newscard
+                                event="DeepOwl Woods tokens now available!"
+                                duration="24th April 2022-31st May 2022"
+                                className="newscard-items"
+                                ></Newscard>
+                                <Newscard
+                                event="Governance voting starting soon!"
+                                duration="26th April 2022-28th April 2022"
+                                className="newscard-items"
+                                ></Newscard>
+                            </ul>
                         </div>
                     </section>
                     </span>
@@ -143,10 +135,6 @@ const pageContent = {
                     name="Emma Watson"
                     description="Emma Watson, in full Emma Charlotte Duerre Watson, (born April 15, 1990, Paris, France), British actress and activist who was perhaps best known for playing the young wizard Hermione Granger in the Harry Potter films. She also garnered attention as a spokesperson for women's equality."
                 ></ProfileInfo>
-                <section className="login-signup-wrapper">
-                    <Login></Login>
-                    <Signup></Signup>
-                </section>
             </div>
         } />
     ),

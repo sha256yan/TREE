@@ -34,7 +34,7 @@ export default function Main(props) {
   };
 
   return (
-    <section className={} style={mainComp}>
+    <section className="main--comp" style={mainComp}>
       <h1 classname="main--title" style={mainTitle}>
         {props.title}
       </h1>

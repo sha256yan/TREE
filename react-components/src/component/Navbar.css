@@ -3,6 +3,7 @@
     display:flex;
     justify-content: space-between;
     background: linear-gradient(180deg, #4DC03A 0%, #26878D 100%);
+    align-items: center;
 }
 
 .all-menu-items{

@@ -98,7 +98,7 @@ function App(props) {
   return (
     <Router>
       <CryptoAuthContext.Provider
-        value={{ authenticate, isAuthenticated, user }}
+        value={{ authenticate, isAuthenticated, user, popupStatus }}
       >
         <EmailAuthContext.Provider
           value={{
