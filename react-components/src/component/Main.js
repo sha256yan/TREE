@@ -25,7 +25,7 @@ export default function Main(props) {
   };
   const mainComp = {
     width: "100%",
-    height: "75%",
+    height: "28.125rem",
     backgroundImage: `url(${props.theimage})`,
     objectFit: "none",
     border: "none",
