@@ -9,8 +9,19 @@ import Pages from "./component/Pages";
 import { useMoralis } from "react-moralis";
 import pageContent from "./PageContent";
 
+
+const WAIT_MSG = "Please wait...";
+const SUCC_SIGNUP_MSG = "Succesfully Signed up!";
+const SUCC_EMAIL_SIGNIN_MSG = "Sucessfully signed in!";
+const SUCC_CRYPT_SIGNIN_MSG = "Successfully connnected wallet!";
+const FAIL_LOGIN_MSG = "Invalid Credentials."
+
+
+
 const CryptoAuthContext = React.createContext();
 const EmailAuthContext = React.createContext();
+
+
 
 export { CryptoAuthContext, EmailAuthContext };
 
@@ -20,17 +31,25 @@ function App(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [popupStatus, setPopupStatus] = useState("");
 
+  //These will be used to store the state of popups.
+  //Will use popups for authentications, proposal 
+  //creation, warnings, etc...
+  const [popupStatus, setPopupStatus] = useState("");
   const POPUP_RESET_DELAY_MS = 3000;
 
-  const resetPopup = () => {
-    setTimeout(() => setPopupStatus(""), POPUP_RESET_DELAY_MS);
+  const resetPopup = (resetDelay) => {
+    setTimeout(() => setPopupStatus(""), resetDelay);
   };
 
+  const setPopupWrapper = (PopupStatus, timeToReset) => {
+    setPopupStatus(PopupStatus);
+    resetPopup(timeToReset);
+  }
+
+
   const signupFunc = async () => {
-    setPopupStatus("Please wait...");
-    console.log(username, password, email);
+    setPopupStatus(WAIT_MSG, POPUP_RESET_DELAY_MS);
 
     const user = new Moralis.User();
     user.set("username", username);
@@ -39,11 +58,9 @@ function App(props) {
 
     try {
       await user.signUp();
-      setPopupStatus("Succesfully Signed up");
-      resetPopup();
+      setPopupWrapper(SUCC_SIGNUP_MSG, POPUP_RESET_DELAY_MS)
     } catch (error) {
-      setPopupStatus(`Sign up failed: ${error.message}`);
-      resetPopup();
+      setPopupWrapper(error.message, POPUP_RESET_DELAY_MS);
     }
   };
 
@@ -56,11 +73,9 @@ function App(props) {
     const result = await login(username, password);
 
     if (result === undefined) {
-      setPopupStatus("Invalid Credentials.");
-      resetPopup();
+      setPopupWrapper(FAIL_LOGIN_MSG, POPUP_RESET_DELAY_MS)
     } else {
-      setPopupStatus("Logged in!");
-      resetPopup();
+      setPopupWrapper(SUCC_EMAIL_SIGNIN_MSG, POPUP_RESET_DELAY_MS);
     }
   };
 

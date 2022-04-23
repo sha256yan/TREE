@@ -38,6 +38,25 @@ function Input(props) {
 
 
 
+//AuthContextSetters: array of setter functions
+//submitFunc: function to be executed when form is submitted. (cannot take params)
+function getEmailFormHandlers(EmailAuth, submitFunc) {
+  const {setEmail, setPassword, setUsername, popupStatus} = EmailAuth;
+  const handleEmailChange = (event) => setEmail(event.target.value);
+  const handlePasswordChange = (event) => setPassword(event.target.value);
+  const handleUsernameChange = (event) => setUsername(event.target.value);
+  const handleSubmit = (event) => {
+      event.preventDefault();
+      submitFunc()
+  };
+
+  return {handleEmailChange, handlePasswordChange, handleUsernameChange, handleSubmit, popupStatus};
+}
+
+
+
+
+
 
 function SignIn() {
     const EmailAuth = React.useContext(EmailAuthContext);
@@ -47,16 +66,9 @@ function SignIn() {
     const togglePopup = () => {
       setIsOpen(!isOpen);
     };
-  
-    const {setPassword, setUsername, loginUsingUsername, popupStatus} = EmailAuth;
-  
-    //These allow the signup component to change the state of the app component. 
-    const handlePasswordChange = (event) => setPassword(event.target.value);
-    const handleUsernameChange = (event) => setUsername(event.target.value);
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        loginUsingUsername()
-    };
+
+    const submitFunc = EmailAuth.loginUsingUsername;
+    const {handlePasswordChange, handleUsernameChange, handleSubmit, popupStatus} = getEmailFormHandlers(EmailAuth, submitFunc);
 
     let title = popupStatus.length > 0 ? popupStatus : "Sign In";
   
@@ -87,20 +99,7 @@ function SignIn() {
 
   
 
-//AuthContextSetters: array of setter functions
-//submitFunc: function to be executed when form is submitted. (cannot take params)
-function getEmailFormHandlers(EmailAuth, submitFunc) {
-    const {setEmail, setPassword, setUsername, popupStatus} = EmailAuth;
-    const handleEmailChange = (event) => setEmail(event.target.value);
-    const handlePasswordChange = (event) => setPassword(event.target.value);
-    const handleUsernameChange = (event) => setUsername(event.target.value);
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        submitFunc()
-    };
 
-    return {handleEmailChange, handlePasswordChange, handleUsernameChange, handleSubmit, popupStatus};
-}
 
 
 
