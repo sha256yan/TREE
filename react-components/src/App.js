@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./component/pages/Home";
-import Governance from "./component/pages/Governance";
-import Transaction from "./component/pages/Transaction";
-import Profile from "./component/pages/Profile";
+import { useMoralis } from "react-moralis";
+
 import Navbar from "./component/Navbar";
 import Pages from "./component/Pages";
-import { useMoralis } from "react-moralis";
 import pageContent from "./PageContent";
 
 const CryptoAuthContext = React.createContext();
@@ -101,11 +98,11 @@ function App(props) {
         >
           <Navbar></Navbar>
           <Routes>
-            <Route exact path="/" element={<Home />}></Route>
-            <Route exact path="/governance" element={<Governance />}></Route>
-            <Route exact path="/transaction" element={<Transaction />}></Route>
+            <Route exact path="/" element={<Pages columns={pageContent.home} />}></Route>
+            <Route exact path="/governance" element={<Pages columns={pageContent.governance} />}></Route>
+            <Route exact path="/transaction" element={<Pages columns={pageContent.transaction}/>}></Route>
             <Route exact path="/about" element={<Pages columns={pageContent.about}/>}></Route>
-            <Route exact path="/profile" element={<Profile />}></Route>
+            <Route exact path="/profile" element={<Pages columns={pageContent.profile} />}></Route>
           </Routes>
         </EmailAuthContext.Provider>
       </CryptoAuthContext.Provider>

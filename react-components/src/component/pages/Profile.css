@@ -1,9 +1,0 @@
-.profile-wrapper{
-    background: linear-gradient(180deg, #7CE0FF 0%, #B1FFC7 100%);
-    height:100vh;
-    margin-top:-20px;
-}
-.login-signup-wrapper{
-    display:flex;
-    flex-direction: row;
-}
