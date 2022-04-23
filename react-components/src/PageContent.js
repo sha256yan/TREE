@@ -8,6 +8,7 @@ import Newscard from "./component/Newscard";
 import CryptoLogIn from "./component/Auth";
 import { EmailLogIn } from "./component/Auth";
 import SignUp, { SignIn } from "./component/Signup";
+import Button from "./component/Button";
 import "./style.css";
 
 const pageContent = {
@@ -81,7 +82,9 @@ const pageContent = {
               src="images/governanceforum.png"
               text="Governance forum"
               statement="A forum for governance related discussion. Share proposals, provide feedback, and shape the future of the protocol with the Tree community."
+              className="my-card"
             ></CardsItem>
+            <Button text="Mint Token"></Button>
             <CardsItem
               src="images/voting.avif"
               text="Governance portal"
@@ -115,21 +118,6 @@ const pageContent = {
         }
       />
     </section>
-  ),
-
-  profile: (
-    <Column
-      content={
-        <div className="profile-wrapper">
-          <ProfileInfo
-            image="images/sample-profile-picture.png"
-            name="Emma Watson"
-            description="Emma Watson, in full Emma Charlotte Duerre Watson, (born April 15, 1990, Paris, France), British actress and activist who was perhaps best known for playing the young wizard Hermione Granger in the Harry Potter films. She also garnered attention as a spokesperson for women's equality."
-          ></ProfileInfo>
-          <section className="login-signup-wrapper"></section>
-        </div>
-      }
-    />
   ),
 };
 

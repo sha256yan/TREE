@@ -127,11 +127,6 @@ function App(props) {
               path="/about"
               element={<Pages columns={pageContent.about} />}
             ></Route>
-            <Route
-              exact
-              path="/profile"
-              element={<Pages columns={pageContent.profile} />}
-            ></Route>
           </Routes>
         </EmailAuthContext.Provider>
       </CryptoAuthContext.Provider>

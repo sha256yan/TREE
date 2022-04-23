@@ -6,15 +6,12 @@ import "./Navbar.css";
 function NavMenuItem(props) {
   return (
     <li className="menu-item">
-    <Link to={props.link} className="menu-descr">
-      {props.text}
-    </Link>
+      <Link to={props.link} className="menu-descr">
+        {props.text}
+      </Link>
     </li>
   );
 }
-
-
-
 
 function Navbar(props) {
   return (
@@ -28,18 +25,11 @@ function Navbar(props) {
         ></img>
       </Link>
 
-
-
-
       <ul className="all-menu-items">
         <NavMenuItem text="Governance" link="/governance"></NavMenuItem>
-        <NavMenuItem text="Transaction"link="/transaction"></NavMenuItem>
-        <NavMenuItem text="About Us"   link="/about"></NavMenuItem>
-        <NavMenuItem text="Profile"    link="/profile"></NavMenuItem>
+        <NavMenuItem text="Transaction" link="/transaction"></NavMenuItem>
+        <NavMenuItem text="About Us" link="/about"></NavMenuItem>
       </ul>
-
-
-
     </nav>
   );
 }
