@@ -6,19 +6,14 @@ import Navbar from "./component/Navbar";
 import Pages from "./component/Pages";
 import pageContent from "./PageContent";
 
-
 const WAIT_MSG = "Please wait...";
 const SUCC_SIGNUP_MSG = "Succesfully Signed up!";
 const SUCC_EMAIL_SIGNIN_MSG = "Sucessfully signed in!";
 const SUCC_CRYPT_SIGNIN_MSG = "Successfully connnected wallet!";
-const FAIL_LOGIN_MSG = "Invalid Credentials."
-
-
+const FAIL_LOGIN_MSG = "Invalid Credentials.";
 
 const CryptoAuthContext = React.createContext();
 const EmailAuthContext = React.createContext();
-
-
 
 export { CryptoAuthContext, EmailAuthContext };
 
@@ -30,7 +25,7 @@ function App(props) {
   const [email, setEmail] = useState("");
 
   //These will be used to store the state of popups.
-  //Will use popups for authentications, proposal 
+  //Will use popups for authentications, proposal
   //creation, warnings, etc...
   const [popupStatus, setPopupStatus] = useState("");
   const POPUP_RESET_DELAY_MS = 3000;
@@ -42,8 +37,7 @@ function App(props) {
   const setPopupWrapper = (PopupStatus, timeToReset) => {
     setPopupStatus(PopupStatus);
     resetPopup(timeToReset);
-  }
-
+  };
 
   const signupFunc = async () => {
     setPopupStatus(WAIT_MSG, POPUP_RESET_DELAY_MS);
@@ -55,7 +49,7 @@ function App(props) {
 
     try {
       await user.signUp();
-      setPopupWrapper(SUCC_SIGNUP_MSG, POPUP_RESET_DELAY_MS)
+      setPopupWrapper(SUCC_SIGNUP_MSG, POPUP_RESET_DELAY_MS);
     } catch (error) {
       setPopupWrapper(error.message, POPUP_RESET_DELAY_MS);
     }
@@ -70,7 +64,7 @@ function App(props) {
     const result = await login(username, password);
 
     if (result === undefined) {
-      setPopupWrapper(FAIL_LOGIN_MSG, POPUP_RESET_DELAY_MS)
+      setPopupWrapper(FAIL_LOGIN_MSG, POPUP_RESET_DELAY_MS);
     } else {
       setPopupWrapper(SUCC_EMAIL_SIGNIN_MSG, POPUP_RESET_DELAY_MS);
     }
@@ -113,11 +107,31 @@ function App(props) {
         >
           <Navbar></Navbar>
           <Routes>
-            <Route exact path="/" element={<Pages columns={pageContent.home} />}></Route>
-            <Route exact path="/governance" element={<Pages columns={pageContent.governance} />}></Route>
-            <Route exact path="/transaction" element={<Pages columns={pageContent.transaction}/>}></Route>
-            <Route exact path="/about" element={<Pages columns={pageContent.about}/>}></Route>
-            <Route exact path="/profile" element={<Pages columns={pageContent.profile} />}></Route>
+            <Route
+              exact
+              path="/"
+              element={<Pages columns={pageContent.home} />}
+            ></Route>
+            <Route
+              exact
+              path="/governance"
+              element={<Pages columns={pageContent.governance} />}
+            ></Route>
+            <Route
+              exact
+              path="/transaction"
+              element={<Pages columns={pageContent.transaction} />}
+            ></Route>
+            <Route
+              exact
+              path="/about"
+              element={<Pages columns={pageContent.about} />}
+            ></Route>
+            <Route
+              exact
+              path="/profile"
+              element={<Pages columns={pageContent.profile} />}
+            ></Route>
           </Routes>
         </EmailAuthContext.Provider>
       </CryptoAuthContext.Provider>

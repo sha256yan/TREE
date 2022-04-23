@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { CryptoAuthContext, EmailAuthContext } from "../App";
 import Button from "./Button";
 import Popup from "./Popup";
-import "./SignUp.css";
+import "./Signup.css";
 import validator from "validator";
 
 function CryptoLogIn(props) {
@@ -72,17 +72,6 @@ function SignIn() {
     handleSubmit,
     popupStatus,
   } = getEmailFormHandlers(EmailAuth, submitFunc);
-
-  const { setPassword, setUsername, loginUsingUsername, popupStatus } =
-    EmailAuth;
-
-  //These allow the signup component to change the state of the app component.
-  const handlePasswordChange = (event) => setPassword(event.target.value);
-  const handleUsernameChange = (event) => setUsername(event.target.value);
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    loginUsingUsername();
-  };
 
   let title = popupStatus.length > 0 ? popupStatus : "Sign In";
 

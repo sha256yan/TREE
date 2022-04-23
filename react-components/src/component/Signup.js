@@ -1,6 +1,6 @@
 import React from "react";
 import Popup from "./Popup";
-import "./SignUp.css";
+import "./Signup.css";
 import validator from "validator";
 import { EmailAuthContext } from "../App";
 
