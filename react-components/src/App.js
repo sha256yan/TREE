@@ -3,14 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./component/pages/Home";
 import Governance from "./component/pages/Governance";
 import Transaction from "./component/pages/Transaction";
-import About from "./component/pages/About";
 import Profile from "./component/pages/Profile";
 import Navbar from "./component/Navbar";
 import Pages from "./component/Pages";
-import Column from "./component/Column";
-import Main from "./component/Main";
-import CryptoLogIn from "./component/Auth";
 import { useMoralis } from "react-moralis";
+import pageContent from "./PageContent";
 
 const CryptoAuthContext = React.createContext();
 const EmailAuthContext = React.createContext();
@@ -113,18 +110,7 @@ function App(props) {
               element={
                 <Pages
                   columns={
-                    <>
-                      <Column
-                        content={
-                          <Main
-                            title="ABOUT US"
-                            content="Established since 2021, we have hosted forest carbon token and governance token sales for thousands of organisations. The aim of Tree organisation is to provide a platform for everyday consumers to help in reducing carbon waste as well."
-                            theimage="images/forestThree.jpg"
-                          ></Main>
-                        }
-                      ></Column>
-                      <Column content={<h1>Hello world!</h1>}></Column>
-                    </>
+                    pageContent.about
                   }
                 ></Pages>
               }
