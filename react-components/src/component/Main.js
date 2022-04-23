@@ -34,14 +34,13 @@ export default function Main(props) {
   };
 
   return (
-    <section classname="main--comp" style={mainComp}>
+    <section className="main--comp" style={mainComp}>
       <h1 classname="main--title" style={mainTitle}>
         {props.title}
       </h1>
-      <p classname="main--content" style={mainContent}>
+      <p className="main--content" style={mainContent}>
         {props.content}
       </p>
-      <AllButtons></AllButtons>
     </section>
   );
 }

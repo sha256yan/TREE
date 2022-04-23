@@ -2,6 +2,8 @@ import React from "react";
 import Main from "../Main";
 import Organisations from "../Organisations";
 import "./Transaction.css";
+
+
 function Transaction() {
   return (
     <section>
