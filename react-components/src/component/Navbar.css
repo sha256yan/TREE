@@ -1,41 +1,41 @@
 .navigation-menu{
+    height: 7.5vh;
     display:flex;
     justify-content: space-between;
     background: linear-gradient(180deg, #4DC03A 0%, #26878D 100%);
-
 }
 
 .all-menu-items{
     display:flex;
     list-style-type: none;
+    align-items: center;
  
 }
 .menu-descr{
+    letter-spacing: 0.05px;
     text-decoration: none;
-    font-family: 'Abel';
     font-style: normal;
     font-weight: 400;
-    font-size: 1.563rem;
-    line-height: 0.875rem;
-    color: #FFFFFF;
-    padding:1.25rem;
+    font-size: 1.5rem;
+    line-height: 14px;
+    color: #ffffff;
+    padding: 20px;
 
 }
+
 .logo{
     text-decoration: none;
-    color:#FFFFFF;
-    font-family: 'Abel';
+    color:#ededed;
     font-style: normal;
     font-weight: 400;
-    font-size: 1.563rem;
-    line-height: 0.875rem;
+    font-size: 25px;
+    line-height: 14px;
     color: #FFFFFF;
-    padding:0.938rem;
+    padding:15px;
    
 }
 .navigation-icon{
-    margin-top:-1.25rem;
-    padding-top:-3.125rem;
-    margin-bottom: -0.625rem;
-    background-size: auto;
+    margin-top:-20px;
+    padding-top:-50px;
+    margin-bottom: -10px;;
 }
