@@ -104,17 +104,7 @@ function App(props) {
             <Route exact path="/" element={<Home />}></Route>
             <Route exact path="/governance" element={<Governance />}></Route>
             <Route exact path="/transaction" element={<Transaction />}></Route>
-            <Route
-              exact
-              path="/about"
-              element={
-                <Pages
-                  columns={
-                    pageContent.about
-                  }
-                ></Pages>
-              }
-            ></Route>
+            <Route exact path="/about" element={<Pages columns={pageContent.about}/>}></Route>
             <Route exact path="/profile" element={<Profile />}></Route>
           </Routes>
         </EmailAuthContext.Provider>
