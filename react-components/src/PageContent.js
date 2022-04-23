@@ -4,8 +4,6 @@ import Main from "./component/Main";
 import CardsItem from "./component/CardsItem";
 import Organisations from "./component/Organisations";
 import ProfileInfo from "./component/ProfileInfo";
-import Login from "./component/Login";
-import Signup from "./component/Signup";
 import Newscard from "./component/Newscard";
 import CryptoLogIn from "./component/Auth";
 import { EmailLogIn } from "./component/Auth";
@@ -128,10 +126,7 @@ const pageContent = {
             name="Emma Watson"
             description="Emma Watson, in full Emma Charlotte Duerre Watson, (born April 15, 1990, Paris, France), British actress and activist who was perhaps best known for playing the young wizard Hermione Granger in the Harry Potter films. She also garnered attention as a spokesperson for women's equality."
           ></ProfileInfo>
-          <section className="login-signup-wrapper">
-            <Login></Login>
-            <Signup></Signup>
-          </section>
+          <section className="login-signup-wrapper"></section>
         </div>
       }
     />
