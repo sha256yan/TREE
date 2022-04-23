@@ -3,11 +3,8 @@ import Newscard from "../Newscard";
 import AllButtons from "../AllButtons";
 import CryptoLogIn from "../Auth";
 import { EmailLogIn } from "../Auth";
-import SignUp, {SignIn} from "../Signup";
+import SignUp, { SignIn } from "../SignUp";
 import "./Home.css";
-
-
-
 
 function Home() {
   return (
