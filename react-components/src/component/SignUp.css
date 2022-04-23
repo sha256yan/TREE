@@ -1,29 +1,21 @@
 .signup-title{
-    padding-left:42.5%;
-    margin-top:-0.625rem;
 }
 .signup-form{
     display:flex;
     flex-direction: column;
-    padding-left:40%;
-    margin-top:-1.25rem;
+    justify-content: space-between;
+    height: 100%;
 }
 .signup-label{
-    margin-bottom:10px;
-    padding-right:10px;
+    display: flex;
+    justify-content: center;
 }
 .signup-button{
+    font-weight: bold;
     width: 90px;
     height: 25px;
-    left: 4rem;
-    top: 23.125rem;
     background: #FFFFFF;
     border-radius: 1.875rem;
     display:flex;
-    padding-left:20px;  
     
-}
-
-.signup-button{
-    font-weight: bold;
 }

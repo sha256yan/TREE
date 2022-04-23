@@ -6,22 +6,16 @@ import Transaction from "./component/pages/Transaction";
 import About from "./component/pages/About";
 import Profile from "./component/pages/Profile";
 import Navbar from "./component/Navbar";
-
-
-
+import Pages from "./component/Pages";
+import Column from "./component/Column";
+import Main from "./component/Main";
 import CryptoLogIn from "./component/Auth";
 import { useMoralis } from "react-moralis";
 
 const CryptoAuthContext = React.createContext();
 const EmailAuthContext = React.createContext();
 
-export {CryptoAuthContext, EmailAuthContext};
-
-
-
-
-
-
+export { CryptoAuthContext, EmailAuthContext };
 
 function App(props) {
   const { login, isAuthenticated, authenticate, Moralis, user } = useMoralis();
@@ -31,15 +25,12 @@ function App(props) {
   const [email, setEmail] = useState("");
   const [popupStatus, setPopupStatus] = useState("");
 
-
   const POPUP_RESET_DELAY_MS = 3000;
 
   const resetPopup = () => {
     setTimeout(() => setPopupStatus(""), POPUP_RESET_DELAY_MS);
-  }
+  };
 
-
-  
   const signupFunc = async () => {
     setPopupStatus("Please wait...");
     console.log(username, password, email);
@@ -53,33 +44,28 @@ function App(props) {
       await user.signUp();
       setPopupStatus("Succesfully Signed up");
       resetPopup();
-
     } catch (error) {
       setPopupStatus(`Sign up failed: ${error.message}`);
       resetPopup();
     }
   };
 
-
   //Login Only using MetaMask
   const loginUsingMetamask = () => {
     authenticate();
   };
 
-
   const loginUsingUsername = async () => {
     const result = await login(username, password);
 
-    if(result === undefined) {
+    if (result === undefined) {
       setPopupStatus("Invalid Credentials.");
       resetPopup();
-    }
-    else{
+    } else {
       setPopupStatus("Logged in!");
       resetPopup();
     }
   };
-
 
   const resetPassword = () => {
     //getting email from email input
@@ -100,20 +86,49 @@ function App(props) {
     }
   };
 
-
-
-
-
   return (
     <Router>
-      <CryptoAuthContext.Provider value={{authenticate, isAuthenticated, user}}>
-        <EmailAuthContext.Provider value={{setEmail, setUsername, setPassword, signupFunc, loginUsingUsername, popupStatus, setPopupStatus}}>
-        <Navbar></Navbar>
+      <CryptoAuthContext.Provider
+        value={{ authenticate, isAuthenticated, user }}
+      >
+        <EmailAuthContext.Provider
+          value={{
+            setEmail,
+            setUsername,
+            setPassword,
+            signupFunc,
+            loginUsingUsername,
+            popupStatus,
+            setPopupStatus,
+          }}
+        >
+          <Navbar></Navbar>
           <Routes>
             <Route exact path="/" element={<Home />}></Route>
             <Route exact path="/governance" element={<Governance />}></Route>
             <Route exact path="/transaction" element={<Transaction />}></Route>
-            <Route exact path="/about" element={<About />}></Route>
+            <Route
+              exact
+              path="/about"
+              element={
+                <Pages
+                  columns={
+                    <>
+                      <Column
+                        content={
+                          <Main
+                            title="ABOUT US"
+                            content="Established since 2021, we have hosted forest carbon token and governance token sales for thousands of organisations. The aim of Tree organisation is to provide a platform for everyday consumers to help in reducing carbon waste as well."
+                            theimage="images/forestThree.jpg"
+                          ></Main>
+                        }
+                      ></Column>
+                      <Column content={<h1>Hello world!</h1>}></Column>
+                    </>
+                  }
+                ></Pages>
+              }
+            ></Route>
             <Route exact path="/profile" element={<Profile />}></Route>
           </Routes>
         </EmailAuthContext.Provider>
@@ -121,8 +136,5 @@ function App(props) {
     </Router>
   );
 }
-
-
-
 
 export default App;
