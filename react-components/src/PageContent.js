@@ -7,7 +7,6 @@ import ProfileInfo from "./component/ProfileInfo";
 import Login from "./component/Login";
 import Signup from "./component/Signup";
 import Newscard from "./component/Newscard";
-import AllButtons from "./component/AllButtons";
 import CryptoLogIn from "./component/Auth";
 import { EmailLogIn } from "./component/Auth";
 import SignUp, { SignIn } from "./component/Signup";

@@ -1,5 +1,4 @@
 import React from "react";
-import AllButtons from "./AllButtons";
 
 // main--comp is container
 // create new section called main--init
